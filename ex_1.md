@@ -1,6 +1,5 @@
 # Exercise 1
 
-
 ## ex_01
 
 寫出可以得到下方結果的 SQL 語句
@@ -8,7 +7,14 @@
 Answer
 
 ```sql
-/* SOME SQL STATEMENT  */
+SELECT
+	lastname,
+	firstname,
+	jobtitle
+FROM
+	employees
+WHERE
+	jobtitle = 'Sales Rep'
 ```
 
 Output
@@ -45,7 +51,16 @@ Output
 Answer
 
 ```sql
-/* SOME SQL STATEMENT  */
+SELECT
+	lastname,
+	firstname,
+	jobtitle,
+	officeCode
+FROM
+	employees
+WHERE
+	jobtitle = 'Sales Rep'
+	AND officeCode = 1
 ```
 
 Output
@@ -67,7 +82,16 @@ Output
 Answer
 
 ```sql
-/* SOME SQL STATEMENT  */
+SELECT
+	firstname,
+	lastname,
+	officeCode
+FROM
+	employees
+WHERE
+	officeCode BETWEEN 1 AND 3
+ORDER BY
+	officeCode
 ```
 
 Output
@@ -90,7 +114,6 @@ Output
 10 rows in set (0.00 sec)
 ```
 
-
 ## ex_04
 
 寫出可以得到下方結果的 SQL 語句
@@ -98,7 +121,14 @@ Output
 Answer
 
 ```sql
-/* SOME SQL STATEMENT  */
+SELECT
+	contactLastName AS contactLastname,
+	contactFirstName AS contactFirstname
+FROM
+	customers
+ORDER BY
+	contactLastname DESC,
+	contactFirstname DESC
 ```
 
 Output
@@ -119,7 +149,6 @@ Output
 ....
 ```
 
-
 ## ex_05
 
 寫出可以得到下方結果的 SQL 語句
@@ -127,7 +156,14 @@ Output
 Answer
 
 ```sql
-/* SOME SQL STATEMENT  */
+SELECT
+	lastname,
+	firstname,
+	officeCode
+FROM
+	employees
+WHERE
+	officeCode in(6, 7)
 ```
 
 Output
@@ -146,7 +182,6 @@ Output
 6 rows in set (0.00 sec)
 ```
 
-
 ## ex_06
 
 寫出可以得到下方結果的 SQL 語句
@@ -154,7 +189,16 @@ Output
 Answer
 
 ```sql
-/* SOME SQL STATEMENT  */
+SELECT
+	lastname,
+	firstname,
+	jobtitle,
+	officeCode
+FROM
+	employees
+WHERE
+	firstname = 'Leslie'
+	AND officeCode = 1
 ```
 
 Output
@@ -169,7 +213,6 @@ Output
 2 rows in set (0.00 sec)
 ```
 
-
 ## ex_07
 
 寫出可以得到下方結果的 SQL 語句
@@ -177,7 +220,12 @@ Output
 Answer
 
 ```sql
-/* SOME SQL STATEMENT  */
+SELECT DISTINCT
+	lastname
+FROM
+	employees
+ORDER BY
+	lastname
 ```
 
 Output
@@ -202,7 +250,6 @@ Output
 19 rows in set (0.01 sec)
 ```
 
-
 ## ex_08
 
 寫出可以得到下方結果的 SQL 語句
@@ -210,7 +257,15 @@ Output
 Answer
 
 ```sql
-/* SOME SQL STATEMENT  */
+SELECT
+	customername,
+	country,
+	state
+FROM
+	customers
+WHERE
+	country = 'USA'
+	AND state = 'CA'
 ```
 
 Output
@@ -241,7 +296,17 @@ Output
 Answer
 
 ```sql
-/* SOME SQL STATEMENT  */
+SELECT
+	customername,
+	country,
+	state,
+	creditlimit
+FROM
+	customers
+WHERE
+	country = 'USA'
+	AND state = 'CA'
+	AND creditlimit > 100000
 ```
 
 Output
@@ -264,7 +329,14 @@ Output
 Answer
 
 ```sql
-/* SOME SQL STATEMENT  */
+SELECT
+	officeCode,
+	city,
+	phone,
+	country
+FROM
+	offices
+LIMIT 4
 ```
 
 Output
